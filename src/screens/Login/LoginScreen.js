@@ -16,8 +16,8 @@ import AsyncStorage from '@react-native-community/async-storage';
 
 import styles from './styles';
 import {connect} from 'react-redux';
-import LogoImage from '../../../assets/images/logo.png';
-import BackgroundLoginImage from '../../../assets/images/background_connexion.png';
+import LogoImage from '../../../assets/images/interacto/logo.png';
+import BackgroundLoginImage from '../../../assets/images/interacto/bg-identification-interacto.png';
 import {textColor} from '../../Theme/AppStyles';
 
 import * as api from '../../services/auth';

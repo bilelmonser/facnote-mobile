@@ -13,7 +13,7 @@ const styles = StyleSheet.create({
   },
   topImageStyle: {
     width: ScaleHelpers.CalcWidth(100),
-    height: ScaleHelpers.CalcHeight(90),
+    height: ScaleHelpers.CalcHeight(100),
     alignSelf: 'center',
     justifyContent: 'center',
     alignItems: 'center',
@@ -38,8 +38,8 @@ const styles = StyleSheet.create({
     fontSize: ScaleHelpers.CalcWidth(4),
   },
   logo: {
-    width: ScaleHelpers.CalcWidth(70),
-    height: ScaleHelpers.CalcWidth(30),
+    width: ScaleHelpers.CalcWidth(40),
+    height: ScaleHelpers.CalcWidth(20),
   },
   formContainer: {
     justifyContent: 'center',

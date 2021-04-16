@@ -13,7 +13,6 @@ import {connect} from 'react-redux';
 
 import styles from './styles';
 import {logout} from '../../redux';
-import Background from '../../../assets/images/background_accueil_ok.png';
 import {text} from '../../constants';
 
 class NotificationsScreen extends React.Component {
