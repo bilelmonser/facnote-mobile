@@ -20,7 +20,7 @@ import {
   faCar,
 } from '@fortawesome/free-solid-svg-icons';
 
-import Background from '../../../assets/images/interacto/backgroung_depose_facture.png';
+import Background from '../../../assets/images/galery/backgroung_depose_facture.png';
 
 import ChooseFacture from './UploadInvoice';
 import IndemnitiesScreen from '../Indemnities/IndemnitiesScreen';

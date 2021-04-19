@@ -10,7 +10,7 @@ import {
   ImageBackground,
 } from 'react-native';
 import styles from './styles';
-import CabinetBackground from '../../../assets/images/interacto/Rectangle.png';
+import CabinetBackground from '../../../assets/images/galery/Rectangle.png';
 import rightArrow from '../../../assets/icons/rightArrow.png';
 import {connect} from 'react-redux';
 import {text, routes, permissions} from '../../constants';

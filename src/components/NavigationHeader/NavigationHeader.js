@@ -6,7 +6,7 @@ import styles from './styles';
 import {FontAwesomeIcon} from '@fortawesome/react-native-fontawesome';
 import {faSlidersH, faChevronLeft} from '@fortawesome/free-solid-svg-icons';
 import ScaleHelpers from '../../Theme/scaleHelpers';
-import  background from '../../../assets/images/interacto/NavigationBackground.png'
+import  background from '../../../assets/images/galery/NavigationBackground.png'
 
 export default class NavigationHeader extends React.Component {
   render() {

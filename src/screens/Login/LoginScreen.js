@@ -17,8 +17,8 @@ import AsyncStorage from '@react-native-community/async-storage';
 import styles from './styles';
 import {connect} from 'react-redux';
 import {primaryColor} from '../../Theme/AppStyles';
-import LogoImage from '../../../assets/images/interacto/logo.png';
-import BackgroundLoginImage from '../../../assets/images/interacto/bg-identification.png';
+import LogoImage from '../../../assets/images/galery/logo.png';
+import BackgroundLoginImage from '../../../assets/images/galery/bg-identification.png';
 
 import * as api from '../../services/auth';
 import getCabinet from '../../services/cabinet';

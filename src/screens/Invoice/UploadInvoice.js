@@ -18,7 +18,7 @@ import FontAwesome from 'react-native-vector-icons/FontAwesome';
 import Toast from 'react-native-toast-message';
 
 import ImagePickerCrop from 'react-native-image-crop-picker';
-import Rectangle from '../../../assets/images/interacto/Rectangle.png';
+import Rectangle from '../../../assets/images/galery/Rectangle.png';
 import Close from '../../../assets/icons/close.png';
 import uploadFiles from '../../services/upload';
 

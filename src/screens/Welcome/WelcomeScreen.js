@@ -11,12 +11,12 @@ import {
 import AsyncStorage from '@react-native-community/async-storage';
 
 import styles from './styles';
-import LogoImage from '../../../assets/images/interacto/logo.png';
+import LogoImage from '../../../assets/images/galery/logo.png';
 
 import {text, routes} from '../../constants';
 import {primaryColor} from '../../Theme/AppStyles';
 
-import backgroundWelcomeImage from '../../../assets/images/interacto/bg-connexion.png';
+import backgroundWelcomeImage from '../../../assets/images/galery/bg-connexion.png';
 
 export default class WelcomeScreen extends React.Component {
   constructor(props) {
