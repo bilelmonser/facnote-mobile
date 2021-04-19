@@ -12,8 +12,8 @@ const styles = StyleSheet.create({
   },
   logo: {
     resizeMode: 'stretch',
-    width: ScaleHelpers.CalcWidth(54),
-    height: ScaleHelpers.CalcWidth(23),
+    width: ScaleHelpers.CalcWidth(40),
+    height: ScaleHelpers.CalcWidth(30),
     margin: 50,
   },
   backgroundStyle: {

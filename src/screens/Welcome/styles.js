@@ -21,8 +21,8 @@ const styles = StyleSheet.create({
     width: ScaleHelpers.CalcWidth(100),
   },
   logo: {
-    width: ScaleHelpers.CalcWidth(54),
-    height: ScaleHelpers.CalcWidth(23),
+    width: ScaleHelpers.CalcWidth(40),
+    height: ScaleHelpers.CalcWidth(30),
   },
   title: {
     textAlign: 'center',
