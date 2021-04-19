@@ -17,12 +17,13 @@ const styles = StyleSheet.create({
   titleContainer: {
     justifyContent: 'center',
     alignItems: 'center',
-    height: ScaleHelpers.CalcHeight(20),
+    height: ScaleHelpers.CalcHeight(25),
     width: ScaleHelpers.CalcWidth(100),
   },
   logo: {
-    width: ScaleHelpers.CalcWidth(54),
-    height: ScaleHelpers.CalcWidth(23),
+    width: ScaleHelpers.CalcWidth(32),
+    height: ScaleHelpers.CalcWidth(32),
+    resizeMode:'stretch'
   },
   title: {
     textAlign: 'center',

@@ -8,12 +8,12 @@ import {fontType} from '../../Theme/AppStyles';
 const styles = StyleSheet.create({
   mainContainer: {
     flex: 1,
-    height: ScaleHelpers.CalcHeight(95),
+    height: ScaleHelpers.CalcHeight(96),
 
   },
   topImageStyle: {
     width: ScaleHelpers.CalcWidth(100),
-    height: ScaleHelpers.CalcHeight(100),
+    height: ScaleHelpers.CalcHeight(110),
     alignSelf: 'center',
     justifyContent: 'center',
     alignItems: 'center',
@@ -38,8 +38,10 @@ const styles = StyleSheet.create({
     fontSize: ScaleHelpers.CalcWidth(4),
   },
   logo: {
-    width: ScaleHelpers.CalcWidth(40),
-    height: ScaleHelpers.CalcWidth(20),
+    width: ScaleHelpers.CalcWidth(32),
+    height: ScaleHelpers.CalcWidth(32),
+    resizeMode:'stretch'
+
   },
   formContainer: {
     justifyContent: 'center',
