@@ -20,8 +20,8 @@ import {
   faCar,
 } from '@fortawesome/free-solid-svg-icons';
 
-
 import Background from '../../../assets/images/interacto/backgroung_depose_facture.png';
+
 import ChooseFacture from './UploadInvoice';
 import IndemnitiesScreen from '../Indemnities/IndemnitiesScreen';
 import {routes, permissions} from '../../constants';

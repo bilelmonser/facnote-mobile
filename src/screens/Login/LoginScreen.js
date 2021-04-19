@@ -16,9 +16,9 @@ import AsyncStorage from '@react-native-community/async-storage';
 
 import styles from './styles';
 import {connect} from 'react-redux';
+import {primaryColor} from '../../Theme/AppStyles';
 import LogoImage from '../../../assets/images/interacto/logo.png';
-import BackgroundLoginImage from '../../../assets/images/interacto/bg-identification-interacto.png';
-import {textColor} from '../../Theme/AppStyles';
+import BackgroundLoginImage from '../../../assets/images/interacto/bg-identification.png';
 
 import * as api from '../../services/auth';
 import getCabinet from '../../services/cabinet';
@@ -181,18 +181,18 @@ class LoginScreen extends React.Component {
           {this.state.showButtom && (
             <View style={styles.buttomView}>
               <Text
-                style={[styles.buttomText, {color: textColor}]}
+                style={[styles.buttomText, {color: primaryColor}]}
                 onPress={() =>
                   Linking.openURL('https://facnote.com/fr/mentions.html')
                 }>
                 {text.mentionsLegales}
               </Text>
-              <Text style={[styles.buttomText, {color: textColor}]}> - </Text>
+              <Text style={[styles.buttomText, {color: primaryColor}]}> - </Text>
               <Text
                 onPress={() =>
                   Linking.openURL('https://facnote.com/fr/cgu.html')
                 }
-                style={[styles.buttomText, {color: textColor}]}>
+                style={[styles.buttomText, {color: primaryColor}]}>
                 {' '}
                 {text.CGU}
               </Text>

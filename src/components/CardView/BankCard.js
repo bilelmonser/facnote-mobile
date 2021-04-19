@@ -13,7 +13,7 @@ import {
   faComments,
 } from '@fortawesome/free-solid-svg-icons';
 import Tooltip from 'react-native-walkthrough-tooltip';
-
+import {primaryColor} from '../../Theme/AppStyles';
 import ScaleHelpers from '../../Theme/scaleHelpers';
 import {fontType} from '../../Theme/AppStyles';
 /* eslint-disable comma-dangle */
@@ -88,7 +88,7 @@ class BankCard extends React.Component {
           style={[
             styles.iconContainer,
             {
-              backgroundColor: 'rgb(92, 117, 254)',
+              backgroundColor: primaryColor,
             },
           ]}>
           <FontAwesomeIcon icon={faPlus} size={23} color="white" />

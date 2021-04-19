@@ -14,9 +14,9 @@ import styles from './styles';
 import LogoImage from '../../../assets/images/interacto/logo.png';
 
 import {text, routes} from '../../constants';
-import {textColor} from '../../Theme/AppStyles';
+import {primaryColor} from '../../Theme/AppStyles';
 
-import backgroundWelcomeImage from '../../../assets/images/interacto/bg-connexion-interacto.png';
+import backgroundWelcomeImage from '../../../assets/images/interacto/bg-connexion.png';
 
 export default class WelcomeScreen extends React.Component {
   constructor(props) {
@@ -58,19 +58,19 @@ export default class WelcomeScreen extends React.Component {
 
         <View style={styles.buttomView}>
           <Text
-            style={[styles.buttomText, {color: textColor}]}
+            style={[styles.buttomText, {color: primaryColor}]}
             onPress={() =>
               Linking.openURL('https://facnote.com/fr/mentions.html')
             }>
             {text.mentionsLegales}
           </Text>
-          <Text style={[styles.buttomText, {color: textColor}]}>
+          <Text style={[styles.buttomText, {color: primaryColor}]}>
             {' '}
             -{' '}
           </Text>
           <Text
             onPress={() => Linking.openURL('https://facnote.com/fr/cgu.html')}
-            style={[styles.buttomText, {color: textColor}]}>
+            style={[styles.buttomText, {color: primaryColor}]}>
             {' '}
             {text.CGU}
           </Text>

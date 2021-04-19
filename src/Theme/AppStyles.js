@@ -2,7 +2,7 @@
 export const interactoColor = '#4D7582';
 export const blueColor = 'rgb(92,117,254)';
 
-export const primaryColor = '#4D7582'
+export const primaryColor = '#4D7582';
 export const textColor = '#707070';
 
 export const fontType = {
@@ -10,4 +10,3 @@ export const fontType = {
   med: 'Nunito-Light',
   bold: 'Nunito-Bold',
 };
-
