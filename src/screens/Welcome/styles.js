@@ -37,7 +37,7 @@ const styles = StyleSheet.create({
     justifyContent: 'center',
   },
   buttonContainer: {
-    width: ScaleHelpers.CalcWidth(30),
+    width: ScaleHelpers.CalcWidth(32),
     alignItems: 'center',
     padding: 5,
     backgroundColor:'white',
