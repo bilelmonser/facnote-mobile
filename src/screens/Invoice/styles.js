@@ -200,19 +200,15 @@ const styles = StyleSheet.create({
     // its for android
     elevation: 5,
     position: 'relative',
-    marginTop: ScaleHelpers.CalcHeight(1),
-    marginBottom: ScaleHelpers.CalcHeight(1),
-
     width: ScaleHelpers.CalcWidth(75),
-    height: ScaleHelpers.CalcHeight(15),
+    height: ScaleHelpers.CalcHeight(13),
 
     borderRadius: 1,
-    backgroundColor:'white',
+    backgroundColor: 'white',
     borderColor: 'rgba(214, 214, 214, 0.4)',
     borderWidth: 1,
     alignSelf: 'center',
     justifyContent: 'center',
-    padding: 10,
   },
   rowContainer: {
     flexDirection: 'column',
