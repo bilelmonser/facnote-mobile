@@ -95,7 +95,7 @@
 
 /* Begin PBXFileReference section */
 		008F07F21AC5B25A0029DE68 /* main.jsbundle */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = main.jsbundle; sourceTree = "<group>"; };
-		00E356EE1AD99517003FC87E /* ComptaSmartTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = ComptaSmartTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		00E356EE1AD99517003FC87E /* SE2CMobileTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = SE2CMobileTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		00E356F11AD99517003FC87E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		00E356F21AD99517003FC87E /* ComptaSmartTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ComptaSmartTests.m; sourceTree = "<group>"; };
 		01526EB8C01E43F7A39BCBB6 /* Feather.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = Feather.ttf; path = "../node_modules/react-native-vector-icons/Fonts/Feather.ttf"; sourceTree = "<group>"; };
@@ -114,8 +114,8 @@
 		17D3C46B24CA699900A2B510 /* ComptaSmart-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "ComptaSmart-Bridging-Header.h"; sourceTree = "<group>"; };
 		17D727DCF4C643079583F7F8 /* Nunito-Black.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = "Nunito-Black.ttf"; path = "../assets/fonts/Nunito-Black.ttf"; sourceTree = "<group>"; };
 		2BF56C6AACBCD0FDFB3283DA /* libPods-ComptaSmart-ComptaSmartTests.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-ComptaSmart-ComptaSmartTests.a"; sourceTree = BUILT_PRODUCTS_DIR; };
-		2D02E47B1E0B4A5D006451C7 /* ComptaSmart-tvOS.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "ComptaSmart-tvOS.app"; sourceTree = BUILT_PRODUCTS_DIR; };
-		2D02E4901E0B4A5D006451C7 /* ComptaSmart-tvOSTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "ComptaSmart-tvOSTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
+		2D02E47B1E0B4A5D006451C7 /* SE2CMobile-tvOS.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "SE2CMobile-tvOS.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		2D02E4901E0B4A5D006451C7 /* SE2CMobile-tvOSTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "SE2CMobile-tvOSTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		2D20E6433C494EE99CBF312D /* Nunito-Regular.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = "Nunito-Regular.ttf"; path = "../assets/fonts/Nunito-Regular.ttf"; sourceTree = "<group>"; };
 		2F6E546C687B0154CFCF1323 /* Pods-ComptaSmart.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ComptaSmart.debug.xcconfig"; path = "Pods/Target Support Files/Pods-ComptaSmart/Pods-ComptaSmart.debug.xcconfig"; sourceTree = "<group>"; };
 		30A2D5FE119340589A3A3867 /* Nunito-Italic.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = "Nunito-Italic.ttf"; path = "../assets/fonts/Nunito-Italic.ttf"; sourceTree = "<group>"; };
@@ -279,9 +279,9 @@
 			isa = PBXGroup;
 			children = (
 				13B07F961A680F5B00A75B9A /* ComptaSmart.app */,
-				00E356EE1AD99517003FC87E /* ComptaSmartTests.xctest */,
-				2D02E47B1E0B4A5D006451C7 /* ComptaSmart-tvOS.app */,
-				2D02E4901E0B4A5D006451C7 /* ComptaSmart-tvOSTests.xctest */,
+				00E356EE1AD99517003FC87E /* SE2CMobileTests.xctest */,
+				2D02E47B1E0B4A5D006451C7 /* SE2CMobile-tvOS.app */,
+				2D02E4901E0B4A5D006451C7 /* SE2CMobile-tvOSTests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -344,9 +344,9 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		00E356ED1AD99517003FC87E /* ComptaSmartTests */ = {
+		00E356ED1AD99517003FC87E /* SE2CMobileTests */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 00E357021AD99517003FC87E /* Build configuration list for PBXNativeTarget "ComptaSmartTests" */;
+			buildConfigurationList = 00E357021AD99517003FC87E /* Build configuration list for PBXNativeTarget "SE2CMobileTests" */;
 			buildPhases = (
 				2B9F1A32B29CB61394AB3A92 /* [CP] Check Pods Manifest.lock */,
 				00E356EA1AD99517003FC87E /* Sources */,
@@ -359,14 +359,14 @@
 			dependencies = (
 				00E356F51AD99517003FC87E /* PBXTargetDependency */,
 			);
-			name = ComptaSmartTests;
+			name = SE2CMobileTests;
 			productName = ComptaSmartTests;
-			productReference = 00E356EE1AD99517003FC87E /* ComptaSmartTests.xctest */;
+			productReference = 00E356EE1AD99517003FC87E /* SE2CMobileTests.xctest */;
 			productType = "com.apple.product-type.bundle.unit-test";
 		};
-		13B07F861A680F5B00A75B9A /* ComptaSmart */ = {
+		13B07F861A680F5B00A75B9A /* SE2CMobile */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 13B07F931A680F5B00A75B9A /* Build configuration list for PBXNativeTarget "ComptaSmart" */;
+			buildConfigurationList = 13B07F931A680F5B00A75B9A /* Build configuration list for PBXNativeTarget "SE2CMobile" */;
 			buildPhases = (
 				5FAECE1F51E0989E333A05F7 /* [CP] Check Pods Manifest.lock */,
 				FD10A7F022414F080027D42C /* Start Packager */,
@@ -380,14 +380,14 @@
 			);
 			dependencies = (
 			);
-			name = ComptaSmart;
+			name = SE2CMobile;
 			productName = ComptaSmart;
 			productReference = 13B07F961A680F5B00A75B9A /* ComptaSmart.app */;
 			productType = "com.apple.product-type.application";
 		};
-		2D02E47A1E0B4A5D006451C7 /* ComptaSmart-tvOS */ = {
+		2D02E47A1E0B4A5D006451C7 /* SE2CMobile-tvOS */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 2D02E4BA1E0B4A5E006451C7 /* Build configuration list for PBXNativeTarget "ComptaSmart-tvOS" */;
+			buildConfigurationList = 2D02E4BA1E0B4A5E006451C7 /* Build configuration list for PBXNativeTarget "SE2CMobile-tvOS" */;
 			buildPhases = (
 				F5749ECBFD79EF317895A501 /* [CP] Check Pods Manifest.lock */,
 				FD10A7F122414F3F0027D42C /* Start Packager */,
@@ -400,14 +400,14 @@
 			);
 			dependencies = (
 			);
-			name = "ComptaSmart-tvOS";
+			name = "SE2CMobile-tvOS";
 			productName = "ComptaSmart-tvOS";
-			productReference = 2D02E47B1E0B4A5D006451C7 /* ComptaSmart-tvOS.app */;
+			productReference = 2D02E47B1E0B4A5D006451C7 /* SE2CMobile-tvOS.app */;
 			productType = "com.apple.product-type.application";
 		};
-		2D02E48F1E0B4A5D006451C7 /* ComptaSmart-tvOSTests */ = {
+		2D02E48F1E0B4A5D006451C7 /* SE2CMobile-tvOSTests */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 2D02E4BB1E0B4A5E006451C7 /* Build configuration list for PBXNativeTarget "ComptaSmart-tvOSTests" */;
+			buildConfigurationList = 2D02E4BB1E0B4A5E006451C7 /* Build configuration list for PBXNativeTarget "SE2CMobile-tvOSTests" */;
 			buildPhases = (
 				1CC561520978F250F2560F37 /* [CP] Check Pods Manifest.lock */,
 				2D02E48C1E0B4A5D006451C7 /* Sources */,
@@ -420,9 +420,9 @@
 				2D02E4921E0B4A5D006451C7 /* PBXTargetDependency */,
 				BB50A4A2260E291800671D8D /* PBXTargetDependency */,
 			);
-			name = "ComptaSmart-tvOSTests";
+			name = "SE2CMobile-tvOSTests";
 			productName = "ComptaSmart-tvOSTests";
-			productReference = 2D02E4901E0B4A5D006451C7 /* ComptaSmart-tvOSTests.xctest */;
+			productReference = 2D02E4901E0B4A5D006451C7 /* SE2CMobile-tvOSTests.xctest */;
 			productType = "com.apple.product-type.bundle.unit-test";
 		};
 /* End PBXNativeTarget section */
@@ -470,10 +470,10 @@
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				13B07F861A680F5B00A75B9A /* ComptaSmart */,
-				00E356ED1AD99517003FC87E /* ComptaSmartTests */,
-				2D02E47A1E0B4A5D006451C7 /* ComptaSmart-tvOS */,
-				2D02E48F1E0B4A5D006451C7 /* ComptaSmart-tvOSTests */,
+				13B07F861A680F5B00A75B9A /* SE2CMobile */,
+				00E356ED1AD99517003FC87E /* SE2CMobileTests */,
+				2D02E47A1E0B4A5D006451C7 /* SE2CMobile-tvOS */,
+				2D02E48F1E0B4A5D006451C7 /* SE2CMobile-tvOSTests */,
 			);
 		};
 /* End PBXProject section */
@@ -840,17 +840,17 @@
 /* Begin PBXTargetDependency section */
 		00E356F51AD99517003FC87E /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
-			target = 13B07F861A680F5B00A75B9A /* ComptaSmart */;
+			target = 13B07F861A680F5B00A75B9A /* SE2CMobile */;
 			targetProxy = 00E356F41AD99517003FC87E /* PBXContainerItemProxy */;
 		};
 		2D02E4921E0B4A5D006451C7 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
-			target = 2D02E47A1E0B4A5D006451C7 /* ComptaSmart-tvOS */;
+			target = 2D02E47A1E0B4A5D006451C7 /* SE2CMobile-tvOS */;
 			targetProxy = 2D02E4911E0B4A5D006451C7 /* PBXContainerItemProxy */;
 		};
 		BB50A4A2260E291800671D8D /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
-			target = 13B07F861A680F5B00A75B9A /* ComptaSmart */;
+			target = 13B07F861A680F5B00A75B9A /* SE2CMobile */;
 			targetProxy = BB50A4A1260E291800671D8D /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
@@ -930,7 +930,7 @@
 				CODE_SIGN_ENTITLEMENTS = "";
 				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 34;
+				CURRENT_PROJECT_VERSION = 1;
 				DEAD_CODE_STRIPPING = YES;
 				DEVELOPMENT_TEAM = 5FU4864MKR;
 				EXCLUDED_ARCHS = "";
@@ -981,14 +981,14 @@
 					"\"${PODS_ROOT}/CocoaLibEvent/lib\"",
 					"\"${PODS_ROOT}/OpenSSL-Universal/ios/lib\"",
 				);
-				MARKETING_VERSION = 1.6;
+				MARKETING_VERSION = 1.0;
 				ONLY_ACTIVE_ARCH = YES;
 				OTHER_LDFLAGS = (
 					"$(inherited)",
 					"-ObjC",
 					"-lc++",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = com.facnote.comptasmart;
+				PRODUCT_BUNDLE_IDENTIFIER = com.comptasmart.SE2CMobile;
 				PRODUCT_NAME = ComptaSmart;
 				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_OBJC_BRIDGING_HEADER = "ComptaSmart-Bridging-Header.h";
@@ -1006,7 +1006,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_ENTITLEMENTS = "";
-				CURRENT_PROJECT_VERSION = 34;
+				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = 5FU4864MKR;
 				INFOPLIST_FILE = ComptaSmart/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "/usr/lib/swift $(TOOLCHAIN_DIR)/usr/lib/swift-5.0/$(PLATFORM_NAME) $(inherited) @executable_path/Frameworks";
@@ -1047,14 +1047,14 @@
 					"\"${PODS_ROOT}/CocoaLibEvent/lib\"",
 					"\"${PODS_ROOT}/OpenSSL-Universal/ios/lib\"",
 				);
-				MARKETING_VERSION = 1.6;
+				MARKETING_VERSION = 1.0;
 				ONLY_ACTIVE_ARCH = YES;
 				OTHER_LDFLAGS = (
 					"$(inherited)",
 					"-ObjC",
 					"-lc++",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = com.facnote.comptasmart;
+				PRODUCT_BUNDLE_IDENTIFIER = com.comptasmart.SE2CMobile;
 				PRODUCT_NAME = ComptaSmart;
 				SWIFT_OBJC_BRIDGING_HEADER = "ComptaSmart-Bridging-Header.h";
 				SWIFT_VERSION = 5.0;
@@ -1304,7 +1304,7 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		00E357021AD99517003FC87E /* Build configuration list for PBXNativeTarget "ComptaSmartTests" */ = {
+		00E357021AD99517003FC87E /* Build configuration list for PBXNativeTarget "SE2CMobileTests" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				00E356F61AD99517003FC87E /* Debug */,
@@ -1313,7 +1313,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		13B07F931A680F5B00A75B9A /* Build configuration list for PBXNativeTarget "ComptaSmart" */ = {
+		13B07F931A680F5B00A75B9A /* Build configuration list for PBXNativeTarget "SE2CMobile" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				13B07F941A680F5B00A75B9A /* Debug */,
@@ -1322,7 +1322,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		2D02E4BA1E0B4A5E006451C7 /* Build configuration list for PBXNativeTarget "ComptaSmart-tvOS" */ = {
+		2D02E4BA1E0B4A5E006451C7 /* Build configuration list for PBXNativeTarget "SE2CMobile-tvOS" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				2D02E4971E0B4A5E006451C7 /* Debug */,
@@ -1331,7 +1331,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		2D02E4BB1E0B4A5E006451C7 /* Build configuration list for PBXNativeTarget "ComptaSmart-tvOSTests" */ = {
+		2D02E4BB1E0B4A5E006451C7 /* Build configuration list for PBXNativeTarget "SE2CMobile-tvOSTests" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				2D02E4991E0B4A5E006451C7 /* Debug */,
