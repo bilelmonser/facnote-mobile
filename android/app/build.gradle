@@ -133,11 +133,11 @@ android {
     }
 
     defaultConfig {
-        applicationId "com.comptasmart"
+        applicationId "com.comptasmart.interacto"
         minSdkVersion rootProject.ext.minSdkVersion
         targetSdkVersion rootProject.ext.targetSdkVersion
-        versionCode 10
-        versionName "1.6"
+        versionCode 1
+        versionName "1.0"
         vectorDrawables.useSupportLibrary = true
         multiDexEnabled true // ADD THIS LINE
     }
