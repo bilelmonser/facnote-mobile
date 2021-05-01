@@ -182,16 +182,15 @@ class LoginScreen extends React.Component {
             <View style={styles.buttomView}>
               <Text
                 style={[styles.buttomText, {color: primaryColor}]}
-                onPress={() =>
-                  Linking.openURL('https://facnote.com/fr/mentions.html')
-                }>
+                onPress={() => Linking.openURL(text.mentionsLegalesUrl)}>
                 {text.mentionsLegales}
               </Text>
-              <Text style={[styles.buttomText, {color: primaryColor}]}> - </Text>
+              <Text style={[styles.buttomText, {color: primaryColor}]}>
+                {' '}
+                -{' '}
+              </Text>
               <Text
-                onPress={() =>
-                  Linking.openURL('https://facnote.com/fr/cgu.html')
-                }
+                onPress={() => Linking.openURL(text.cguUrl)}
                 style={[styles.buttomText, {color: primaryColor}]}>
                 {' '}
                 {text.CGU}
