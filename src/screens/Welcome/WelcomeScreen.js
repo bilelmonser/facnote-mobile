@@ -42,7 +42,7 @@ export default class WelcomeScreen extends React.Component {
               style={styles.topImageStyle}></Image>
             <View>
               <View style={styles.titleContainer}>
-              <Image style={styles.logo} source={LogoImage} />
+                <Image style={styles.logo} source={LogoImage} />
               </View>
               <View style={styles.buttonView}>
                 <TouchableHighlight
@@ -59,17 +59,12 @@ export default class WelcomeScreen extends React.Component {
         <View style={styles.buttomView}>
           <Text
             style={[styles.buttomText, {color: primaryColor}]}
-            onPress={() =>
-              Linking.openURL('https://facnote.com/fr/mentions.html')
-            }>
+            onPress={() => Linking.openURL(text.mentionLegalesUrl)}>
             {text.mentionsLegales}
           </Text>
-          <Text style={[styles.buttomText, {color: primaryColor}]}>
-            {' '}
-            -{' '}
-          </Text>
+          <Text style={[styles.buttomText, {color: primaryColor}]}> - </Text>
           <Text
-            onPress={() => Linking.openURL('https://facnote.com/fr/cgu.html')}
+            onPress={() => Linking.openURL(text.cguURL)}
             style={[styles.buttomText, {color: primaryColor}]}>
             {' '}
             {text.CGU}

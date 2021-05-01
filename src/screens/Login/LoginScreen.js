@@ -116,90 +116,88 @@ class LoginScreen extends React.Component {
 
   render() {
     return (
-      <ScrollView>
-        <View style={styles.mainContainer}>
-          <Image
-            source={BackgroundLoginImage}
-            style={styles.topImageStyle}></Image>
-          {this.state.loading && (
-            <View style={styles.loader}>
-              <ActivityIndicator size="large" color="white" />
-            </View>
-          )}
-          <View style={styles.titleContainer}>
-            <Image style={styles.logo} source={LogoImage} />
-            <Text style={styles.error}>{this.state.error}</Text>
-          </View>
-          <View style={styles.formContainer}>
-            <View style={styles.inputBlock}>
-              <Text style={styles.label}>{text.Identifiant}</Text>
-
-              <View style={styles.inputContainer}>
-                <TextInput
-                  autoCompleteType={'name'}
-                  style={styles.input}
-                  onChangeText={(text) => this.setState({name: text})}
-                  value={this.state.name}
-                />
+      <View>
+        <ScrollView>
+          <View style={styles.mainContainer}>
+            <Image
+              source={BackgroundLoginImage}
+              style={styles.topImageStyle}></Image>
+            {this.state.loading && (
+              <View style={styles.loader}>
+                <ActivityIndicator size="large" color="white" />
               </View>
+            )}
+            <View style={styles.titleContainer}>
+              <Image style={styles.logo} source={LogoImage} />
+              <Text style={styles.error}>{this.state.error}</Text>
             </View>
-            <View style={styles.inputBlock}>
-              <Text style={styles.label}>{text.motDePasse}</Text>
+            <View style={styles.formContainer}>
+              <View style={styles.inputBlock}>
+                <Text style={styles.label}>{text.Identifiant}</Text>
 
-              <View style={styles.inputContainer}>
-                <TextInput
-                  autoCompleteType={'password'}
-                  style={styles.input}
-                  secureTextEntry={true}
-                  onChangeText={(text) => this.setState({password: text})}
-                  value={this.state.password}
-                />
+                <View style={styles.inputContainer}>
+                  <TextInput
+                    autoCompleteType={'name'}
+                    style={styles.input}
+                    onChangeText={(text) => this.setState({name: text})}
+                    value={this.state.name}
+                  />
+                </View>
               </View>
-            </View>
-            <CheckBox
-              containerStyle={styles.checkboxContainer}
-              textStyle={styles.checkboxLabel}
-              checkedColor={'white'}
-              uncheckedColor={'white'}
-              title={text.EnregistrerIdentifiant}
-              style={styles.checkbox}
-              checked={this.state.rememberMe}
-              onPress={(value) =>
-                this.setState({rememberMe: !this.state.rememberMe})
-              }
-            />
+              <View style={styles.inputBlock}>
+                <Text style={styles.label}>{text.motDePasse}</Text>
 
-            <View style={styles.buttonContainer}>
-              <TouchableHighlight
-                style={styles.buttonStyle}
-                onPress={() => this.onPressLogButton()}
-                underlayColor="rgba(73,182,77,1,0.9)">
-                <Text style={styles.signTxt}>{text.Connexion}</Text>
-              </TouchableHighlight>
-            </View>
-          </View>
-          {this.state.showButtom && (
-            <View style={styles.buttomView}>
-              <Text
-                style={[styles.buttomText, {color: primaryColor}]}
-                onPress={() =>
-                  Linking.openURL('https://facnote.com/fr/mentions.html')
-                }>
-                {text.mentionsLegales}
-              </Text>
-              <Text style={[styles.buttomText, {color: primaryColor}]}> - </Text>
-              <Text
-                onPress={() =>
-                  Linking.openURL('https://facnote.com/fr/cgu.html')
+                <View style={styles.inputContainer}>
+                  <TextInput
+                    autoCompleteType={'password'}
+                    style={styles.input}
+                    secureTextEntry={true}
+                    onChangeText={(text) => this.setState({password: text})}
+                    value={this.state.password}
+                  />
+                </View>
+              </View>
+              <CheckBox
+                containerStyle={styles.checkboxContainer}
+                textStyle={styles.checkboxLabel}
+                checkedColor={'white'}
+                uncheckedColor={'white'}
+                title={text.EnregistrerIdentifiant}
+                style={styles.checkbox}
+                checked={this.state.rememberMe}
+                onPress={(value) =>
+                  this.setState({rememberMe: !this.state.rememberMe})
                 }
-                style={[styles.buttomText, {color: primaryColor}]}>
-                {' '}
-                {text.CGU}
-              </Text>
+              />
+
+              <View style={styles.buttonContainer}>
+                <TouchableHighlight
+                  style={styles.buttonStyle}
+                  onPress={() => this.onPressLogButton()}
+                  underlayColor="rgba(73,182,77,1,0.9)">
+                  <Text style={styles.signTxt}>{text.Connexion}</Text>
+                </TouchableHighlight>
+              </View>
             </View>
-          )}
-        </View>
-      </ScrollView>
+          </View>
+        </ScrollView>
+        {this.state.showButtom && (
+          <View style={styles.buttomView}>
+            <Text
+              style={[styles.buttomText, {color: primaryColor}]}
+              onPress={() => Linking.openURL(text.mentionLegalesUrl)}>
+              {text.mentionsLegales}
+            </Text>
+            <Text style={[styles.buttomText, {color: primaryColor}]}> - </Text>
+            <Text
+              onPress={() => Linking.openURL(text.cguURL)}
+              style={[styles.buttomText, {color: primaryColor}]}>
+              {' '}
+              {text.CGU}
+            </Text>
+          </View>
+        )}
+      </View>
     );
   }
 }
