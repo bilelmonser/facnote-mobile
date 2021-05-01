@@ -1,4 +1,4 @@
-package com.comptasmart;
+package com.comptasmart.se2c;
 
 
 import com.facebook.react.ReactActivity;
@@ -18,7 +18,7 @@ public class MainActivity extends ReactActivity {
     
 protected String getMainComponentName() {
         
-return "ComptaSmart";
+return "SE2C";
     }
 
 
