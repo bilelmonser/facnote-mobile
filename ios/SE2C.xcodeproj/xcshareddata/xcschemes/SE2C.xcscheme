@@ -15,9 +15,9 @@
             <BuildableReference
                BuildableIdentifier = "primary"
                BlueprintIdentifier = "13B07F861A680F5B00A75B9A"
-               BuildableName = "ComptaSmart.app"
+               BuildableName = "SE2C.app"
                BlueprintName = "SE2CMobile"
-               ReferencedContainer = "container:ComptaSmart.xcodeproj">
+               ReferencedContainer = "container:SE2C.xcodeproj">
             </BuildableReference>
          </BuildActionEntry>
       </BuildActionEntries>
@@ -45,9 +45,9 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "13B07F861A680F5B00A75B9A"
-            BuildableName = "ComptaSmart.app"
+            BuildableName = "SE2C.app"
             BlueprintName = "SE2CMobile"
-            ReferencedContainer = "container:ComptaSmart.xcodeproj">
+            ReferencedContainer = "container:SE2C.xcodeproj">
          </BuildableReference>
       </BuildableProductRunnable>
    </LaunchAction>
@@ -62,9 +62,9 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "13B07F861A680F5B00A75B9A"
-            BuildableName = "ComptaSmart.app"
+            BuildableName = "SE2C.app"
             BlueprintName = "SE2CMobile"
-            ReferencedContainer = "container:ComptaSmart.xcodeproj">
+            ReferencedContainer = "container:SE2C.xcodeproj">
          </BuildableReference>
       </BuildableProductRunnable>
    </ProfileAction>

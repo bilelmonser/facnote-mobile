@@ -1,4 +1,4 @@
-package com.comptasmart;
+package com.comptasmart.se2c;
 
 import android.app.Application;
 
