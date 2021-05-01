@@ -2,9 +2,12 @@
 <Workspace
    version = "1.0">
    <FileRef
-      location = "group:ComptaSmart.xcodeproj">
+      location = "group:/Users/bilelmonser/Projects/facnote_mobile/ios/Interacto.xcodeproj">
    </FileRef>
    <FileRef
       location = "group:Pods/Pods.xcodeproj">
+   </FileRef>
+   <FileRef
+      location = "group:Interacto.xcodeproj">
    </FileRef>
 </Workspace>

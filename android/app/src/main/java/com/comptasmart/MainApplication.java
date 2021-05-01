@@ -1,4 +1,4 @@
-package com.comptasmart;
+package com.comptasmart.interacto;
 
 import android.app.Application;
 
