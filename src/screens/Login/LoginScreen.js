@@ -86,13 +86,11 @@ class LoginScreen extends React.Component {
       await AsyncStorage.setItem('accessToken', user['token']);
       await AsyncStorage.setItem('modules', JSON.stringify(user.user.modules));
       let cabinet = await getCabinet();
-      console.log("cabinetHaveAccess",cabinetHaveAccess.includes(cabinet.base))
       if (
         cabinetHaveAccess.length > 0 &&
         !cabinetHaveAccess.includes(cabinet.base)
       )
-        throw new Error('cabinet not Have Access!');
-      console.log('cabinet', cabinet.base);
+        throw new Error(cabinet.base + 'cabinet not Have Access!');
       let society = await getSociety();
       this.props.login({
         user: user['user'],
