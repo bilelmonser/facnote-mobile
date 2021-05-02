@@ -107,3 +107,5 @@ export const permissions = {
   purchases: 'facturation_ventes_homepage',
   expenseReport: 'crm_note_frais_note_frais',
 };
+
+export const cabinetHaveAccess = [];
