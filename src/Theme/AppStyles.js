@@ -2,7 +2,7 @@
 export const interactoColor = '#4D7582';
 export const blueColor = 'rgb(92,117,254)';
 
-export const primaryColor = 'rgb(92,117,254)';
+export const primaryColor = '#263F91';
 export const textColor = '#707070';
 
 export const fontType = {

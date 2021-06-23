@@ -23,7 +23,10 @@ const styles = StyleSheet.create({
   logo: {
     width: ScaleHelpers.CalcWidth(54),
     height: ScaleHelpers.CalcWidth(23),
+    resizeMode: 'stretch',
+
   },
+
   title: {
     textAlign: 'center',
     color: 'white',

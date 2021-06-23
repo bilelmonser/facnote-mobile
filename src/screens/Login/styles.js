@@ -40,6 +40,8 @@ const styles = StyleSheet.create({
   logo: {
     width: ScaleHelpers.CalcWidth(70),
     height: ScaleHelpers.CalcWidth(30),
+    resizeMode: 'stretch',
+
   },
   formContainer: {
     justifyContent: 'center',

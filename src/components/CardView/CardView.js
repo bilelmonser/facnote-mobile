@@ -94,7 +94,7 @@ class CardView extends React.Component {
             style={styles.itemIcon}
             onPress={() => this.props.onShowModal(item)}
             underlayColor="rgba(73,182,77,1,0.9)">
-            <FontAwesomeIcon icon={faLink} size={23} color="#4EC6F5" />
+            <FontAwesomeIcon icon={faLink} size={23} color="black" />
           </TouchableHighlight>
         </View>
         <View style={styles.amountContainer}>
