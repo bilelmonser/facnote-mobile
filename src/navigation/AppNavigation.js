@@ -1,12 +1,12 @@
 /* eslint-disable react-native/no-inline-styles */
 /* eslint-disable comma-dangle */
-import React, {useEffect, useState} from 'react';
-import {connect} from 'react-redux';
+import React, { useEffect, useState } from 'react';
+import { connect } from 'react-redux';
 import AsyncStorage from '@react-native-community/async-storage';
 import moment from 'moment';
 
-import {logout} from '../redux';
-import {View, Platform, AppState} from 'react-native';
+import { logout } from '../redux';
+import { View, Platform, AppState } from 'react-native';
 import SplashScreen from '../screens/Splash/SplashScreen';
 import OnboardingScreen from '../screens/OnBoarding/OnBoardingScreen';
 import WelcomeScreen from '../screens/Welcome/WelcomeScreen';
@@ -31,24 +31,21 @@ import BackButton from '../components/BackButton/BackButton';
 
 import TabBarItem from '../components/TabBarItem/TabBarItem';
 
-import {createStackNavigator} from '@react-navigation/stack';
-import {createBottomTabNavigator} from '@react-navigation/bottom-tabs';
-import {createDrawerNavigator} from '@react-navigation/drawer';
-import {NavigationContainer} from '@react-navigation/native';
+import { createStackNavigator } from '@react-navigation/stack';
+import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
+import { createDrawerNavigator } from '@react-navigation/drawer';
+import { NavigationContainer } from '@react-navigation/native';
 
-import {useSelector} from 'react-redux';
-import Home from '../../assets/icons/galery/home.png';
+import { useSelector } from 'react-redux';
 import homeActive from '../../assets/icons/galery/homeActive.png';
 
 import cameraActive from '../../assets/icons/galery/cameraActive.png';
-import camera from '../../assets/icons/galery/camera.png';
-import banque from '../../assets/icons/galery/banque.png';
+
 import banqueActive from '../../assets/icons/galery/banqueActive.png';
 
-import more from '../../assets/icons/galery/more.png';
 import moreActive from '../../assets/icons/galery/moreActive.png';
 import ScaleHelpers from '../Theme/scaleHelpers';
-import {text, routes, permissions} from '../constants';
+import { text, routes, permissions } from '../constants';
 import jwtDecode from 'jwt-decode';
 
 const Stack = createStackNavigator();
@@ -119,11 +116,11 @@ const TabNavigator = () => {
         name={routes.Home}
         component={HomeScreen}
         options={{
-          tabBarIcon: ({tintColor, focused}) => (
+          tabBarIcon: ({ tintColor, focused }) => (
             <TabBarItem
               focused={focused}
               label={text.Accueil}
-              src={focused ? homeActive : Home}
+              src={focused ? homeActive : homeActive}
             />
           ),
         }}
@@ -146,11 +143,11 @@ const TabNavigator = () => {
           name={routes.BankStatement}
           component={BankStatementScreen}
           options={{
-            tabBarIcon: ({tintColor, focused}) => (
+            tabBarIcon: ({ tintColor, focused }) => (
               <TabBarItem
                 focused={focused}
                 label={text.RelevesBancaires}
-                src={focused ? banqueActive : banque}
+                src={focused ? banqueActive : banqueActive}
               />
             ),
           }}
@@ -160,11 +157,11 @@ const TabNavigator = () => {
         name={routes.Invoices}
         component={ChooseInvoice}
         options={{
-          tabBarIcon: ({tintColor, focused}) => (
+          tabBarIcon: ({ tintColor, focused }) => (
             <TabBarItem
               focused={focused}
               label={text.DeposerFacture}
-              src={focused ? cameraActive : camera}
+              src={focused ? cameraActive : cameraActive}
             />
           ),
         }}
@@ -174,11 +171,11 @@ const TabNavigator = () => {
         name={routes.More}
         component={MoreScreen}
         options={{
-          tabBarIcon: ({tintColor, focused}) => (
+          tabBarIcon: ({ tintColor, focused }) => (
             <TabBarItem
               focused={focused}
               label={text.Plus}
-              src={focused ? moreActive : more}
+              src={focused ? moreActive : moreActive}
             />
           ),
         }}
@@ -193,7 +190,7 @@ const mainScreensNavigator = () => {
   return (
     <Stack.Navigator
       initialRouteName={routes.Home}
-      screenOptions={({navigation}) => {
+      screenOptions={({ navigation }) => {
         /*var {routeName} = navigation.state.routes[navigation.state.index];
         if (routeName == 'BankAccounts') {
           routeName = 'Bank Accounts';
@@ -233,7 +230,7 @@ const mainScreensNavigator = () => {
 const MainNavigator = () => {
   return (
     <Stack.Navigator
-      screenOptions={({navigation}) => {
+      screenOptions={({ navigation }) => {
         return {
           headerStyle: {
             backgroundColor:
@@ -258,7 +255,7 @@ const MainNavigator = () => {
           headerShown: false,
         }}
         component={TabNavigator}
-        //component={Platform.OS === 'ios' ? TabNavigator : mainScreensNavigator}
+      //component={Platform.OS === 'ios' ? TabNavigator : mainScreensNavigator}
       />
       <Stack.Screen
         options={{
@@ -268,7 +265,7 @@ const MainNavigator = () => {
         component={IndemnitiesScreen}
       />
       <Stack.Screen
-        options={({navigation}) => {
+        options={({ navigation }) => {
           return {
             header: () => (
               <NavigationHeader
@@ -284,7 +281,7 @@ const MainNavigator = () => {
         component={HistoryScreen}
       />
       <Stack.Screen
-        options={({navigation}) => {
+        options={({ navigation }) => {
           return {
             header: () => (
               <NavigationHeader
@@ -300,7 +297,7 @@ const MainNavigator = () => {
         component={ProfileScreen}
       />
       <Stack.Screen
-        options={({navigation}) => {
+        options={({ navigation }) => {
           return {
             header: () => <></>,
           };
@@ -309,7 +306,7 @@ const MainNavigator = () => {
         component={MyPurchasesSreen}
       />
       <Stack.Screen
-        options={({navigation}) => {
+        options={({ navigation }) => {
           return {
             header: () => <></>,
           };
@@ -327,7 +324,7 @@ const Navigator = () => {
     <Stack.Navigator initialRouteName="Main">
       <Stack.Screen name="Landing" component={LandingNavigator} />
       <Stack.Screen
-        options={{headerShown: false}}
+        options={{ headerShown: false }}
         name="Main"
         component={MainNavigator}
       />
@@ -340,10 +337,10 @@ const DrawerStack = () => {
   return (
     <Drawer.Navigator
       drawerPosition="left"
-      drawerContent={({navigation, state}) => {
+      drawerContent={({ navigation, state }) => {
         return <DrawerContainer navigation={navigation} />;
       }}
-      drawerStyle={{width: 250}}
+      drawerStyle={{ width: 250 }}
       initialRouteName="Main">
       <Drawer.Screen name="Landing" component={LandingNavigator} />
       <Drawer.Screen name="Main" component={MainNavigator} />
@@ -396,7 +393,7 @@ class AppContainer extends React.Component {
       return;
     }, dayInMilliseconds);
     // store intervalId in the state so it can be accessed later:
-    this.setState({intervalId: intervalId});
+    this.setState({ intervalId: intervalId });
   }
 
   componentWillUnmount() {
@@ -425,7 +422,7 @@ class AppContainer extends React.Component {
       // if more that  15 minute
       if (moment().unix() - goingBackgroundTime > 900) this.props.logout();
     }
-    this.setState({appState: nextAppState});
+    this.setState({ appState: nextAppState });
   };
   render() {
     return <NavigationContainer>{<RootNavigator />}</NavigationContainer>;
@@ -433,4 +430,4 @@ class AppContainer extends React.Component {
 }
 
 const mapStateToProps = (state) => ({});
-export default connect(mapStateToProps, {logout})(AppContainer);
+export default connect(mapStateToProps, { logout })(AppContainer);
