@@ -108,4 +108,4 @@ export const permissions = {
   expenseReport: 'crm_note_frais_note_frais',
 };
 
-export const cabinetHaveAccess = ['FA4429'];
+export const cabinetHaveAccess = ['FA4429', 'FA1313'];

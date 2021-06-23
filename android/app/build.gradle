@@ -136,8 +136,8 @@ android {
         applicationId "com.comptasmart.se2c"
         minSdkVersion rootProject.ext.minSdkVersion
         targetSdkVersion rootProject.ext.targetSdkVersion
-        versionCode 1
-        versionName "1.0"
+        versionCode 3
+        versionName "1.1"
         vectorDrawables.useSupportLibrary = true
         multiDexEnabled true // ADD THIS LINE
     }
