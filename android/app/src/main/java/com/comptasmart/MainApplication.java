@@ -1,4 +1,4 @@
-package com.comptasmart;
+package com.comptasmart.cassin;
 
 import android.app.Application;
 

@@ -3,12 +3,12 @@ require_relative '../node_modules/@react-native-community/cli-platform-ios/nativ
 
 platform :ios, '12.0'
 
-target 'ComptaSmart' do
-  # Pods for ComptaSmart
+target 'Cassin' do
+  # Pods for Cassin
   config = use_native_modules!
   use_react_native!(:path => config["reactNativePath"])
 
-  target 'ComptaSmartTests' do
+  target 'CassinTests' do
     inherit! :complete
     # Pods for testing
   end
@@ -23,10 +23,10 @@ target 'ComptaSmart' do
   end
 end
 
-target 'ComptaSmart-tvOS' do
-  # Pods for ComptaSmart-tvOS
+target 'Cassin-tvOS' do
+  # Pods for Cassin-tvOS
 
-  target 'ComptaSmart-tvOSTests' do
+  target 'Cassin-tvOSTests' do
     inherit! :search_paths
     # Pods for testing
   end
