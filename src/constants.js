@@ -1,5 +1,5 @@
 //API URL
-export const API_URL = 'https://cabinet-expertcomptable.com/';
+export const API_URL = 'http://odyssee.facnote.com';
 export const API_URL_DEV = 'http://odyssee.facnote.com';
 export const API_URL_PROD = 'https://cabinet-expertcomptable.com/';
 
