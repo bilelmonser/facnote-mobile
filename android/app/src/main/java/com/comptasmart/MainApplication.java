@@ -1,4 +1,4 @@
-package com.comptasmart;
+package com.DMP;
 
 import android.app.Application;
 

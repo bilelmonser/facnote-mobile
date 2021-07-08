@@ -3,12 +3,12 @@ require_relative '../node_modules/@react-native-community/cli-platform-ios/nativ
 
 platform :ios, '12.0'
 
-target 'ComptaSmart' do
-  # Pods for ComptaSmart
+target 'DMP' do
+  # Pods for DMP
   config = use_native_modules!
   use_react_native!(:path => config["reactNativePath"])
 
-  target 'ComptaSmartTests' do
+  target 'DMPTests' do
     inherit! :complete
     # Pods for testing
   end
@@ -23,10 +23,10 @@ target 'ComptaSmart' do
   end
 end
 
-target 'ComptaSmart-tvOS' do
-  # Pods for ComptaSmart-tvOS
+target 'DMP-tvOS' do
+  # Pods for DMP-tvOS
 
-  target 'ComptaSmart-tvOSTests' do
+  target 'DMP-tvOSTests' do
     inherit! :search_paths
     # Pods for testing
   end

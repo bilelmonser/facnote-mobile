@@ -133,7 +133,7 @@ android {
     }
 
     defaultConfig {
-        applicationId "com.comptasmart"
+        applicationId "com.DMP"
         minSdkVersion rootProject.ext.minSdkVersion
         targetSdkVersion rootProject.ext.targetSdkVersion
         versionCode 10
