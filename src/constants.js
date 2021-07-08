@@ -43,9 +43,9 @@ export const text = {
   max: 'Max',
   identifier: 'Vous identifier',
   mentionsLegales: 'mentions légales',
-  mentionLegalesUrl:'https://facnote.com/fr/mentions.html',
+  mentionLegalesUrl: 'https://facnote.com/fr/mentions.html',
   CGU: 'CGU',
-  cguURL:'https://facnote.com/fr/cgu.html',
+  cguURL: 'https://facnote.com/fr/cgu.html',
   Identifiant: 'Identifiant',
   motDePasse: 'Mot de passe',
   Connexion: 'Connexion',
@@ -108,4 +108,4 @@ export const permissions = {
   expenseReport: 'crm_note_frais_note_frais',
 };
 
-export const cabinetHaveAccess = [];
+export const cabinetHaveAccess = ["FA5698"];
