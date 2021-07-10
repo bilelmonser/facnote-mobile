@@ -35,17 +35,14 @@ import { createStackNavigator } from '@react-navigation/stack';
 import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
 import { createDrawerNavigator } from '@react-navigation/drawer';
 import { NavigationContainer } from '@react-navigation/native';
-
-import { useSelector } from 'react-redux';
-import homeActive from '../../assets/icons/galery/homeActive.png';
-
+import {useSelector} from 'react-redux';
 import cameraActive from '../../assets/icons/galery/cameraActive.png';
-
 import banqueActive from '../../assets/icons/galery/banqueActive.png';
-
-import moreActive from '../../assets/icons/galery/moreActive.png';
 import ScaleHelpers from '../Theme/scaleHelpers';
-import { text, routes, permissions } from '../constants';
+import indicateurActive from '../../assets/icons/galery/IndicateurActive.png';
+import indicateur from '../../assets/icons/galery/Indicateur.png';
+import moreActive from '../../assets/icons/galery/moreActive.png';
+import {text, routes} from '../constants';
 import jwtDecode from 'jwt-decode';
 
 const Stack = createStackNavigator();
@@ -111,7 +108,8 @@ const TabNavigator = () => {
         },
         showLabel: false,
       }}
-      initialRouteName={canShowBank ? routes.BankStatement : routes.Invoices}>
+     // initialRouteName={canShowBank ? routes.BankStatement : routes.Invoices}
+      initialRouteName={routes.Home}>
       <BottomTabNavigator.Screen
         name={routes.Home}
         component={HomeScreen}
@@ -119,25 +117,13 @@ const TabNavigator = () => {
           tabBarIcon: ({ tintColor, focused }) => (
             <TabBarItem
               focused={focused}
-              label={text.Accueil}
-              src={focused ? homeActive : homeActive}
+              label={text.Indicateur}
+              src={focused ? indicateurActive : indicateurActive}
             />
           ),
         }}
       />
-      {/*<BottomTabNavigator.Screen
-        name="Indicateur"
-        component={HomeScreen}
-        options={{
-          tabBarIcon: ({tintColor, focused}) => (
-            <TabBarItem
-              focused={focused}
-              label={'Indicateur'}
-              src={focused ? IndicateurImgActive : IndicateurImg}
-            />
-          ),
-        }}
-      />*/}
+
       {canShowBank && (
         <BottomTabNavigator.Screen
           name={routes.BankStatement}

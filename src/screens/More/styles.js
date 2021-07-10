@@ -4,68 +4,17 @@ import ScaleHelpers from '../../Theme/scaleHelpers';
 import {textColor} from '../../Theme/AppStyles';
 import {fontType} from '../../Theme/AppStyles';
 
-
 const styles = StyleSheet.create({
   container: {
     flex: 1,
     backgroundColor: 'white',
-  },
-  topImageStyle: {
-    width: ScaleHelpers.CalcWidth(150),
-    height: ScaleHelpers.CalcHeight(20),
-    marginLeft: ScaleHelpers.CalcWidth(-4),
-    paddingRight: ScaleHelpers.CalcWidth(-4),
-    position: 'absolute',
-  },
-  header: {
-    width: ScaleHelpers.CalcWidth(100),
-    height: ScaleHelpers.CalcHeight(13),
-    alignSelf: 'center',
-    justifyContent: 'center',
-    alignItems: 'center',
-  },
-  content: {
-    height: ScaleHelpers.CalcHeight(160),
-  },
-  headerBigText: {
-    fontSize: ScaleHelpers.CalcWidth(4),
-    fontFamily: fontType.base,
-    color: 'white',
-  },
-  headerText: {
-    fontSize: ScaleHelpers.CalcWidth(2.5),
-    fontFamily: fontType.base,
-    color: 'white',
-  },
-
-  cabinetCard: {
-    //Its for IOS
-    shadowColor: '#000',
-    shadowOffset: {width: 0, height: 2},
-    shadowOpacity: 0.2,
-    // its for android
-    elevation: 5,
-    width: ScaleHelpers.CalcWidth(80),
-    height: ScaleHelpers.CalcHeight(13),
-    marginBottom: ScaleHelpers.CalcHeight(1),
-
-    borderRadius: 10,
-    backgroundColor:'white',
-    borderColor: 'rgba(214, 214, 214, 0.4)',
-    borderWidth: 1,
-    alignSelf: 'center',
-    justifyContent: 'center',
-  },
-  cabinetText: {
-    fontSize: ScaleHelpers.CalcWidth(4),
-    fontFamily: fontType.bold,
-    color: textColor,
-    alignSelf: 'center',
+    flexDirection: 'row',
+    flexWrap: 'wrap',
+    height: ScaleHelpers.CalcHeight(100),
+    padding: ScaleHelpers.CalcWidth(1),
   },
 
   itemContainer: {
-    flexDirection: 'row',
-    padding: ScaleHelpers.CalcHeight(1),
     //Its for IOS
     shadowColor: '#000',
     shadowOffset: {width: 0, height: 2},
@@ -73,56 +22,33 @@ const styles = StyleSheet.create({
     // its for android
     elevation: 5,
     position: 'relative',
-    marginTop: ScaleHelpers.CalcHeight(1),
-    marginBottom: ScaleHelpers.CalcHeight(1),
 
-    width: ScaleHelpers.CalcWidth(90),
-    height: ScaleHelpers.CalcHeight(10),
-
-    borderRadius: 10,
-    backgroundColor:'white',
+    width: ScaleHelpers.CalcWidth(30),
+    height: ScaleHelpers.CalcHeight(12),
+    margin: ScaleHelpers.CalcWidth(1),
+    paddingTop: ScaleHelpers.CalcWidth(4),
+    paddingBottom: ScaleHelpers.CalcWidth(4),
+    backgroundColor: 'white',
     borderColor: 'rgba(214, 214, 214, 0.4)',
-    borderWidth: 1,
-    alignSelf: 'center',
-    justifyContent: 'center',
-    padding: 10,
+    alignItems: 'center',
   },
-  rowContainer: {
-    flexDirection: 'column',
-    alignSelf: 'center',
-    width: ScaleHelpers.CalcWidth(70),
+  titleContainer: {
+    width: ScaleHelpers.CalcWidth(100),
+    paddingTop: ScaleHelpers.CalcWidth(4),
+    paddingBottom: ScaleHelpers.CalcWidth(4),
+  },
+  title: {
+    fontSize: ScaleHelpers.CalcWidth(4),
+    fontFamily: fontType.bold,
+    color: textColor,
   },
 
   itemTitle: {
     fontSize: ScaleHelpers.CalcWidth(4),
-    fontFamily: fontType.bold,
-    color: textColor,
-    alignSelf: 'center',
-    width: ScaleHelpers.CalcWidth(50),
-  },
-  itemTitle2: {
-    fontSize: ScaleHelpers.CalcWidth(2.5),
     fontFamily: fontType.base,
     color: textColor,
-    alignSelf: 'center',
-    width: ScaleHelpers.CalcWidth(50),
-  },
-  rightArrow: {
-    width: ScaleHelpers.CalcWidth(5),
-    height: ScaleHelpers.CalcWidth(5),
-
-    alignSelf: 'center',
-  },
-  leftArrow: {
-    width: ScaleHelpers.CalcWidth(5),
-    height: ScaleHelpers.CalcWidth(5),
-    marginRight: ScaleHelpers.CalcWidth(5),
-
-    alignSelf: 'center',
-  },
-  polygonImg: {
-    width: ScaleHelpers.CalcWidth(25),
-    height: ScaleHelpers.CalcWidth(25),
+    alignContent: 'center',
+    textAlign: 'center',
   },
 });
 

@@ -4,6 +4,9 @@ export const blueColor = 'rgb(92,117,254)';
 
 export const primaryColor = '#293273';
 export const textColor = '#707070';
+export const chartColor = '#4EC7F5';
+
+
 
 export const fontType = {
   base: 'Nunito-Regular',

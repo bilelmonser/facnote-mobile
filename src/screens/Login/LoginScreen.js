@@ -10,23 +10,30 @@ import {
   Keyboard,
   ActivityIndicator,
   Linking,
+  Platform,
+  FlatList
 } from 'react-native';
-import {CheckBox} from 'react-native-elements';
+import { CheckBox } from 'react-native-elements';
 import AsyncStorage from '@react-native-community/async-storage';
+import { ListItem, Avatar } from 'react-native-elements'
 
 import styles from './styles';
-import {connect} from 'react-redux';
+import { connect } from 'react-redux';
 import LogoImage from '../../../assets/images/galery/logo.png';
 import BackgroundLoginImage from '../../../assets/images/galery/background_connexion.png';
-import {primaryColor} from '../../Theme/AppStyles';
+import { primaryColor } from '../../Theme/AppStyles';
 
 import * as api from '../../services/auth';
 import getCabinet from '../../services/cabinet';
 import getSociety from '../../services/societe';
+import getVersion from '../../services/getVersion';
 
-import {login} from '../../redux';
-import {text, permissions, cabinetHaveAccess} from '../../constants';
-import {userHasPermission} from '../../shared/userHasPermission';
+import { login } from '../../redux';
+import { text, permissions, cabinetHaveAccess, appName } from '../../constants';
+import { userHasPermission } from '../../shared/userHasPermission';
+import VersionInfo from 'react-native-version-info';
+
+
 class LoginScreen extends React.Component {
   constructor(props) {
     super(props);
@@ -38,18 +45,28 @@ class LoginScreen extends React.Component {
       showButtom: true,
       loading: false,
       rememberMe: false,
+      listAutocomplit: [],
+      listLogin: [],
+      showList: false,
+      version: ""
     };
   }
   async componentDidMount() {
-    const name = await AsyncStorage.getItem('name');
-    const password = await AsyncStorage.getItem('password');
+
     const rememberMe = await AsyncStorage.getItem('rememberMe');
+    const listLogin = await AsyncStorage.getItem('listLogin');
+
+    const version = await getVersion(appName, Platform.OS)
+    console.log("version", version)
 
     this.setState({
-      name: name || '',
-      password: password || '',
+      version: version[0],
+      listLogin: JSON.parse(listLogin),
+      listAutocomplit: JSON.parse(listLogin),
       rememberMe: rememberMe ? true : false,
     });
+
+
   }
   componentWillMount() {
     this.keyboardDidShowListener = Keyboard.addListener(
@@ -68,25 +85,25 @@ class LoginScreen extends React.Component {
   }
 
   _keshowButtomyboardDidShow = () => {
-    this.setState({showButtom: !this.state.showButtom});
+    this.setState({ showButtom: !this.state.showButtom });
   };
 
   _keyboardDidHide = () => {
-    this.setState({showButtom: !this.state.showButtom});
+    this.setState({ showButtom: !this.state.showButtom });
   };
 
   onPressLogButton = async () => {
-    const {name, password, rememberMe} = this.state;
+    const { name, password, rememberMe } = this.state;
 
     try {
       //check if username is null
       // let username = response.user.username !== null;
-      this.setState({loading: true});
-      let user = await api.login({username: name, password: password});
+      this.setState({ loading: true });
+      let user = await api.login({ username: name, password: password });
       await AsyncStorage.setItem('accessToken', user['token']);
       await AsyncStorage.setItem('modules', JSON.stringify(user.user.modules));
       let cabinet = await getCabinet();
-      console.log("cabinetHaveAccess",cabinetHaveAccess.includes(cabinet.base))
+      console.log("cabinetHaveAccess", cabinetHaveAccess.includes(cabinet.base))
       if (
         cabinetHaveAccess.length > 0 &&
         !cabinetHaveAccess.includes(cabinet.base)
@@ -102,14 +119,23 @@ class LoginScreen extends React.Component {
           (await userHasPermission(permissions.banque)) ||
           (await userHasPermission(permissions.banque_entreprise)),
       });
-      this.setState({loading: false});
+      this.setState({ loading: false });
       if (rememberMe) {
-        AsyncStorage.setItem('password', password);
-        AsyncStorage.setItem('name', name);
+
+        let list = JSON.parse(await AsyncStorage.getItem('listLogin'));
+
+        if (!!list && list.findIndex(item => item.login == name) == -1) {
+          list.push({ login: name, password: password })
+        }
+        else if (!list) {
+          list = [{ login: name, password: password }]
+        }
+
+        AsyncStorage.setItem('listLogin', JSON.stringify(list));
+
         AsyncStorage.setItem('rememberMe', 'true');
       } else {
-        AsyncStorage.removeItem('name');
-        AsyncStorage.removeItem('password');
+
         AsyncStorage.removeItem('rememberMe');
       }
     } catch (error) {
@@ -121,11 +147,37 @@ class LoginScreen extends React.Component {
     }
   };
 
-  render() {
+  renderListUsers() {
     return (
-      <View>
-        <ScrollView>
-          <View style={styles.mainContainer}>
+      <FlatList
+        style={{ flex: 1 }}
+        keyExtractor={this.keyExtractor}
+        data={this.state.listAutocomplit}
+        nestedScrollEnabled
+        renderItem={({ item }) => (
+          <TouchableHighlight
+            style={styles.item}
+            onPress={() => this.setState({ showList: false, name: item.login, password: item.password })}>
+            <ListItem
+              title={item.login}
+              subtitle={"●●●●●●●●"}
+              bottomDivider
+              chevron
+            />
+          </TouchableHighlight>
+        )} />
+    )
+  }
+  render() {
+
+    console.log(this.state.version?.application_version < VersionInfo.appVersion)
+    return (
+
+
+      <View style={styles.mainContainer}>
+        <ScrollView horizontal
+        >
+          <View>
             <Image
               source={BackgroundLoginImage}
               style={styles.topImageStyle}></Image>
@@ -139,17 +191,31 @@ class LoginScreen extends React.Component {
               <Text style={styles.error}>{this.state.error}</Text>
             </View>
             <View style={styles.formContainer}>
+              {(this.state.showList && this.state.listAutocomplit?.length > 0) && <View style={styles.listViewContainer}>
+                {this.renderListUsers()}
+              </View>}
               <View style={styles.inputBlock}>
                 <Text style={styles.label}>{text.Identifiant}</Text>
 
                 <View style={styles.inputContainer}>
                   <TextInput
                     autoCompleteType={'name'}
+                    onFocus={() => this.setState({ showList: true })}
                     style={styles.input}
-                    onChangeText={(text) => this.setState({name: text})}
+                    onChangeText={(text) => {
+                      let list = this.state.listLogin
+                      if (text.length > 0)
+                        list = list?.filter(e => e.login.toLowerCase().includes(text.toLowerCase()))
+                      this.setState({ name: text, listAutocomplit: list })
+                    }
+                    }
                     value={this.state.name}
                   />
+
                 </View>
+
+
+
               </View>
               <View style={styles.inputBlock}>
                 <Text style={styles.label}>{text.motDePasse}</Text>
@@ -159,9 +225,11 @@ class LoginScreen extends React.Component {
                     autoCompleteType={'password'}
                     style={styles.input}
                     secureTextEntry={true}
-                    onChangeText={(text) => this.setState({password: text})}
+                    onChangeText={(text) => this.setState({ password: text })}
                     value={this.state.password}
                   />
+
+
                 </View>
               </View>
               <CheckBox
@@ -173,7 +241,7 @@ class LoginScreen extends React.Component {
                 style={styles.checkbox}
                 checked={this.state.rememberMe}
                 onPress={(value) =>
-                  this.setState({rememberMe: !this.state.rememberMe})
+                  this.setState({ rememberMe: !this.state.rememberMe })
                 }
               />
 
@@ -184,21 +252,30 @@ class LoginScreen extends React.Component {
                   underlayColor="rgba(73,182,77,1,0.9)">
                   <Text style={styles.signTxt}>{text.Connexion}</Text>
                 </TouchableHighlight>
+
               </View>
+
+
             </View>
+            {this.state.version?.application_version > VersionInfo.appVersion && <View style={styles.versionNotif}>
+              <Text style={{ color: 'white' }}
+                onPress={() => Linking.openURL(this.state.version?.application_url)}>
+                Cliquez ici pour télécharger la version {this.state.version.application_version}</Text>
+            </View>}
           </View>
         </ScrollView>
+
         {this.state.showButtom && (
           <View style={styles.buttomView}>
             <Text
-              style={[styles.buttomText, {color: primaryColor}]}
+              style={[styles.buttomText, { color: primaryColor }]}
               onPress={() => Linking.openURL(text.mentionLegalesUrl)}>
               {text.mentionsLegales}
             </Text>
-            <Text style={[styles.buttomText, {color: primaryColor}]}> - </Text>
+            <Text style={[styles.buttomText, { color: primaryColor }]}> - </Text>
             <Text
               onPress={() => Linking.openURL(text.cguURL)}
-              style={[styles.buttomText, {color: primaryColor}]}>
+              style={[styles.buttomText, { color: primaryColor }]}>
               {' '}
               {text.CGU}
             </Text>
@@ -208,4 +285,4 @@ class LoginScreen extends React.Component {
     );
   }
 }
-export default connect(null, {login})(LoginScreen);
+export default connect(null, { login })(LoginScreen);
