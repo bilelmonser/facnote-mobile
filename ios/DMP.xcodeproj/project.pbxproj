@@ -1004,7 +1004,7 @@
 					"-ObjC",
 					"-lc++",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = com.facnote.dmp;
+				PRODUCT_BUNDLE_IDENTIFIER = com.comptasmart.dmp;
 				PRODUCT_NAME = DMP;
 				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_OBJC_BRIDGING_HEADER = "DMP-Bridging-Header.h";
@@ -1070,7 +1070,7 @@
 					"-ObjC",
 					"-lc++",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = com.facnote.dmp;
+				PRODUCT_BUNDLE_IDENTIFIER = com.comptasmart.dmp;
 				PRODUCT_NAME = DMP;
 				SWIFT_OBJC_BRIDGING_HEADER = "DMP-Bridging-Header.h";
 				SWIFT_VERSION = 5.0;

@@ -133,11 +133,11 @@ android {
     }
 
     defaultConfig {
-        applicationId "com.DMP"
+        applicationId "com.comptasmart.dmp"
         minSdkVersion rootProject.ext.minSdkVersion
         targetSdkVersion rootProject.ext.targetSdkVersion
-        versionCode 10
-        versionName "1.6"
+        versionCode 2
+        versionName "1.0"
         vectorDrawables.useSupportLibrary = true
         multiDexEnabled true // ADD THIS LINE
     }
