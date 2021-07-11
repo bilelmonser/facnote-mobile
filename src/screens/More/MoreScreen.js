@@ -1,21 +1,24 @@
 /* eslint-disable react-native/no-inline-styles */
 /* eslint-disable comma-dangle */
 import React from 'react';
-import {
-  View,
-  TouchableHighlight,
-  Text,
-  ScrollView,
-  Image,
-  ImageBackground,
-} from 'react-native';
+import {View, TouchableHighlight, Text, ScrollView} from 'react-native';
 import styles from './styles';
-import CabinetBackground from '../../../assets/images/galery/Rectangle.png';
-import rightArrow from '../../../assets/icons/rightArrow.png';
+import {FontAwesomeIcon} from '@fortawesome/react-native-fontawesome';
+import {
+  faFileContract,
+  faIdCard,
+  faShoppingBag,
+  faEuroSign,
+  faPencilAlt,
+  faBell,
+  faStar
+} from '@fortawesome/free-solid-svg-icons';
 import {connect} from 'react-redux';
 import {text, routes, permissions} from '../../constants';
+import {textColor} from '../../Theme/AppStyles';
+
 import {userHasPermission} from '../../shared/userHasPermission';
-import {logout} from '../../redux';
+import NavigationHeader from '../../components/NavigationHeader/NavigationHeader';
 
 class MoreScreen extends React.Component {
   constructor(props) {
@@ -32,7 +35,7 @@ class MoreScreen extends React.Component {
     var canPurchase = await userHasPermission(permissions.purchases);
     var canExpenseReport = await userHasPermission(permissions.expenseReport);
 
-    var canHistory = canSale || canPurchase || canExpenseReport ;
+    var canHistory = canSale || canPurchase || canExpenseReport;
     this.setState({canSale, canPurchase, canHistory});
   }
 
@@ -41,24 +44,27 @@ class MoreScreen extends React.Component {
     const {cabinet} = this.props.user;
     return (
       <View>
-        <Image source={CabinetBackground} style={styles.topImageStyle}></Image>
-        <View style={styles.header}>
-          {/* <Image style={styles.polygonImg} source={Polygone} />
-          
-          <Text style={styles.headerBigText}>{text.nomComplet}</Text>
-         
+        <NavigationHeader
+          title={text.Plus + '..'}
+          powerOff={true}
+          subTitle={''}
+        />
 
-          <Text style={styles.headerText}>{text.voirProfile}</Text>*/}
-        </View>
-        <TouchableHighlight
-          onPress={() => this.props.navigation.navigate(routes.Cabinet)}
-          underlayColor="rgba(73,182,77,1,0.9)">
-          <View style={styles.cabinetCard}>
-            <Text style={styles.cabinetText}>{cabinet.cabinet.raison_sociale}</Text>
-          </View>
-        </TouchableHighlight>
         <ScrollView>
-          <View style={styles.content}>
+          <View style={styles.container}>
+            <View style={styles.titleContainer}>
+              <Text style={styles.title}>{text.gestion}</Text>
+            </View>
+            <TouchableHighlight
+              onPress={() => this.props.navigation.navigate(routes.Cabinet)}
+              underlayColor="rgba(73,182,77,1,0.9)">
+              <View style={styles.itemContainer}>
+                <FontAwesomeIcon icon={faIdCard} size={28} color={textColor} />
+                <Text style={styles.itemTitle}>
+                  {cabinet.cabinet.raison_sociale}
+                </Text>
+              </View>
+            </TouchableHighlight>
             {canHistory && (
               <TouchableHighlight
                 onPress={() =>
@@ -68,12 +74,14 @@ class MoreScreen extends React.Component {
                 }
                 underlayColor="rgba(73,182,77,1,0.9)">
                 <View style={styles.itemContainer}>
-                  <View style={styles.rowContainer}>
-                    <Text style={styles.itemTitle}>
-                      {text.HistoriqueJustificatifs}
-                    </Text>
-                  </View>
-                  <Image style={styles.rightArrow} source={rightArrow} />
+                  <FontAwesomeIcon
+                    icon={faFileContract}
+                    size={28}
+                    color={textColor}
+                  />
+                  <Text style={styles.itemTitle}>
+                    {text.HistoriqueJustificatifs}
+                  </Text>
                 </View>
               </TouchableHighlight>
             )}
@@ -84,10 +92,12 @@ class MoreScreen extends React.Component {
                 }
                 underlayColor="rgba(73,182,77,1,0.9)">
                 <View style={styles.itemContainer}>
-                  <View style={styles.rowContainer}>
-                    <Text style={styles.itemTitle}>{text.MesAchats}</Text>
-                  </View>
-                  <Image style={styles.rightArrow} source={rightArrow} />
+                  <FontAwesomeIcon
+                    icon={faShoppingBag}
+                    size={28}
+                    color={textColor}
+                  />
+                  <Text style={styles.itemTitle}>{text.MesAchats}</Text>
                 </View>
               </TouchableHighlight>
             )}
@@ -96,38 +106,61 @@ class MoreScreen extends React.Component {
                 onPress={() => this.props.navigation.navigate(routes.Sales)}
                 underlayColor="rgba(73,182,77,1,0.9)">
                 <View style={styles.itemContainer}>
-                  <View style={styles.rowContainer}>
-                    <Text style={styles.itemTitle}>{text.Ventes}</Text>
-                  </View>
-                  <Image style={styles.rightArrow} source={rightArrow} />
+                  <FontAwesomeIcon
+                    icon={faEuroSign}
+                    size={28}
+                    color={textColor}
+                  />
+                  <Text style={styles.itemTitle}>{text.Ventes}</Text>
                 </View>
               </TouchableHighlight>
             )}
             <TouchableHighlight
-              onPress={() => this.props.logout()}
               underlayColor="rgba(73,182,77,1,0.9)">
               <View
-                style={{
-                  ...styles.itemContainer,
-                  ...{
-                    borderColor: 'rgba(171, 183, 183, 1)',
-                    backgroundColor: 'rgba(171, 183, 183, 1)',
-                  },
-                }}>
-                <View style={styles.rowContainer}>
-                  <Text
-                    style={{
-                      ...styles.itemTitle,
-                      ...{
-                        color: 'white',
-                        borderColor: 'rgba(171, 183, 183, 1)',
-                        backgroundColor: 'rgba(171, 183, 183, 1)',
-                      },
-                    }}>
-                    {text.Deconnecter}
-                  </Text>
-                </View>
-                <View style={styles.rightArrow}></View>
+                style={[
+                  styles.itemContainer,
+                  {backgroundColor: '#00000029', elevation: 1},
+                ]}>
+                <FontAwesomeIcon
+                  icon={faPencilAlt}
+                  size={28}
+                  color={textColor}
+                />
+                <Text style={styles.itemTitle}>{text.Note}</Text>
+              </View>
+            </TouchableHighlight>
+            <View style={styles.titleContainer}>
+              <Text style={styles.title}>{text.parametre}</Text>
+            </View>
+            <TouchableHighlight
+              underlayColor="rgba(73,182,77,1,0.9)">
+              <View
+                style={[
+                  styles.itemContainer,
+                  {backgroundColor: '#00000029', elevation: 1},
+                ]}>
+                <FontAwesomeIcon
+                  icon={faBell}
+                  size={28}
+                  color={textColor}
+                />
+                <Text style={styles.itemTitle}>{text.alertes}</Text>
+              </View>
+            </TouchableHighlight>
+            <TouchableHighlight
+              underlayColor="rgba(73,182,77,1,0.9)">
+              <View
+                style={[
+                  styles.itemContainer,
+                  {backgroundColor: '#00000029', elevation: 1},
+                ]}>
+                <FontAwesomeIcon
+                  icon={faStar}
+                  size={28}
+                  color={textColor}
+                />
+                <Text style={styles.itemTitle}>{text.avis}</Text>
               </View>
             </TouchableHighlight>
           </View>
@@ -140,4 +173,4 @@ class MoreScreen extends React.Component {
 const mapStateToProps = (state) => ({
   user: state.auth,
 });
-export default connect(mapStateToProps, {logout})(MoreScreen);
+export default connect(mapStateToProps)(MoreScreen);

@@ -18,6 +18,7 @@ export const SENDCOMMENT = `/api/v1/comments/association`;
 export const REPLYCOMMENT = `/api/v1/comments/reply`;
 export const GETCOMMENTS = `/api/v1/comments`;
 export const GETEXERCICES = `/api/v1/exercises`;
+export const GETINDICATOR = `/api/v1/indicators`;
 
 export const GETACCOUNTSBANK = `/api/v1/accounts/bank`;
 
@@ -27,8 +28,9 @@ export const text = {
   voirSociete: 'Votre expert comptable',
   nomComplet: 'Prénom Nom',
   HistoriqueJustificatifs: 'Historique des justificatifs',
+  Indicateur: 'Indicateurs',
   RelevesBancaires: 'Banque',
-  MesAchats: 'Achat',
+  MesAchats: 'Achats',
   Ventes: 'Ventes',
   filter: 'Filter',
   Reinitialiser: 'Reinitialiser',
@@ -36,6 +38,11 @@ export const text = {
   dateFin: 'Date fin',
   compte: 'Compte',
   banque: 'Banque',
+  gestion: 'Gestion',
+  parametre:'Paramètres',
+  alertes:'Gérer mes Alerts',
+  avis:'Je donne mes avis',
+  Note:'Note de frais',
   searchReleveBanquaire: 'Description, numero de facture, compte ',
   debit: 'Debit',
   credit: 'Credit',
@@ -85,6 +92,14 @@ export const text = {
   SoldeAu: 'Solde au',
   transactionJustifier: 'transaction(s) à justifier',
   transactionNonJustifier: 'transaction(s) non justifier',
+  IndicateurCle: 'Indicateurs Clés',
+  Marge: 'Marge',
+  Excedent: 'Excédent brut d\'exploitation',
+  ChargePersonelle: 'Charge du personelle',
+  SoldeCompte: 'Solde Compte',
+  ChiffreAffaire: 'Chiffre Affaire',
+  Charge: 'Charge',
+
 };
 
 export const routes = {
@@ -107,5 +122,7 @@ export const permissions = {
   purchases: 'facturation_ventes_homepage',
   expenseReport: 'crm_note_frais_note_frais',
 };
+export const appName = `ComptaSmart`;
+
 
 export const cabinetHaveAccess = ["FA5698", "FA1313"];
